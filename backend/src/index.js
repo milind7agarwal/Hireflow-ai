@@ -6,7 +6,7 @@ const cors = require("cors")
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: ["https://hireflow-ai-ashy.vercel.app/login","*"],
+    origin: ["https://hireflow-ai-ashy.vercel.app","*"],
     credentials: true
 }))
 
