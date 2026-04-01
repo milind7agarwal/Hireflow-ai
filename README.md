@@ -115,7 +115,8 @@ MONGO_URI=your_mongodb_connection
 
 ## 📸 Screenshots
 
-(Add your project screenshots here)
+<img width="1440" height="787" alt="Screenshot 2026-04-01 at 10 24 10 PM" src="https://github.com/user-attachments/assets/560b6818-c846-48f1-8d54-922c1e166613" />
+
 
 ---
 
