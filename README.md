@@ -63,7 +63,7 @@ This project demonstrates the integration of modern web technologies with AI to 
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/hireflow-ai.git
+git clone https://github.com/milind7agarwal/hireflow-ai.git
 cd hireflow-ai
 ```
 
@@ -93,23 +93,6 @@ npm run dev
 
 * Frontend deployed on Vercel
 * Backend deployed on Render
-
-Make sure to configure environment variables:
-
-```
-VITE_API_URL=your_backend_url
-```
-
----
-
-## 🔐 Environment Variables
-
-Create a `.env` file in the backend:
-
-```
-PORT=3000
-MONGO_URI=your_mongodb_connection
-```
 
 ---
 
