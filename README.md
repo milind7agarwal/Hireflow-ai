@@ -100,6 +100,8 @@ npm run dev
 
 <img width="1440" height="787" alt="Screenshot 2026-04-01 at 10 24 10 PM" src="https://github.com/user-attachments/assets/560b6818-c846-48f1-8d54-922c1e166613" />
 
+<img width="1110" height="625" alt="Screenshot 2026-04-12 at 1 55 44 PM" src="https://github.com/user-attachments/assets/a461292d-4054-4b16-be56-88b8981b00e7" />
+
 
 ---
 
