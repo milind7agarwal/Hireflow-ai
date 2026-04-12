@@ -1,6 +1,5 @@
 const pdfParse = require("pdf-parse")
-const generateInterviewReport = require("../services/ai.service")
-const generateResumePdf  = require("../services/ai.service")
+const { generateInterviewReport, generateResumePdf } = require("../services/ai.service")
 const interviewReportModel = require("../models/interviewReport.model")
 
 
@@ -14,9 +13,6 @@ async function generateInterViewReportController(req, res) {
     const resumeContent = await (new pdfParse.PDFParse(Uint8Array.from(req.file.buffer))).getText()
     const { selfDescription, jobDescription } = req.body
 
-    const titleMatch = jobDescription.match(/Job Title:\s*(.*)/i);
-    const title = titleMatch ? titleMatch[1] : "Unknown Role";
-
     const interViewReportByAi = await generateInterviewReport({
         resume: resumeContent.text,
         selfDescription,
@@ -28,14 +24,7 @@ async function generateInterViewReportController(req, res) {
         resume: resumeContent.text,
         selfDescription,
         jobDescription,
-        title,
         ...interViewReportByAi
-    })
-
-    res.type("application/json")
-    console.log("[backend] POST /api/interview/ -> JSON", {
-        interviewReportId: interviewReport?._id,
-        matchScore: interviewReport?.matchScore,
     })
 
     res.status(201).json({
@@ -97,20 +86,6 @@ async function generateResumePdfController(req, res) {
     const { resume, jobDescription, selfDescription } = interviewReport
 
     const pdfBuffer = await generateResumePdf({ resume, jobDescription, selfDescription })
-
-    console.log("[backend] POST /api/interview/resume/pdf/", {
-        interviewReportId,
-        pdfBufferType: typeof pdfBuffer,
-        isBuffer: Buffer.isBuffer(pdfBuffer)
-    })
-
-    // Current implementation likely returns JSON (not a Buffer). Avoid sending JSON bytes as "application/pdf".
-    if (!Buffer.isBuffer(pdfBuffer)) {
-        return res.status(500).json({
-            message: "resume pdf generation is not producing a PDF buffer",
-            hint: typeof pdfBuffer,
-        })
-    }
 
     res.set({
         "Content-Type": "application/pdf",
