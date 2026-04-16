@@ -43,8 +43,6 @@ This project demonstrates the integration of modern web technologies with AI to 
 ### Tools & Platforms
 
 * Git & GitHub
-* Vercel (Frontend Deployment)
-* Render (Backend Deployment)
 
 ---
 
@@ -89,11 +87,6 @@ npm run dev
 
 ---
 
-## 🌍 Deployment
-
-* Frontend deployed on Vercel
-* Backend deployed on Render
-
 ---
 
 ## 📸 Screenshots
@@ -109,8 +102,6 @@ npm run dev
 
 * 🔹 Advanced AI scoring system
 * 🔹 Real-time interview simulation
-* 🔹 Resume upload (PDF parsing)
-* 🔹 Authentication & user dashboards
 
 ---
 
