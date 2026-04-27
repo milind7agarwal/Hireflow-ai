@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 const api = axios.create({
-    baseURL: process.env.BE_URL,
+    baseURL: "http://localhost:3000",
     withCredentials: true
 })
 
@@ -55,7 +55,7 @@ export async function getMe() {
 
     try {
 
-        const response = await api.get("/api/auth/me")
+        const response = await api.get("/api/auth/get-me")
 
         return response.data
 
